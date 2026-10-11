@@ -1,0 +1,13 @@
+# 敏感词库：含政治/暴恐/色情等词表，体积大且不适合公开分发，请自行准备
+assets/vocabulary/
+
+# 运行产物
+__pycache__/
+*.pyc
+*.log
+
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

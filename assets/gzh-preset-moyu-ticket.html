@@ -1,0 +1,333 @@
+<!--
+  公众号排版基线模板 · 摸鱼票据风（紧凑档）
+  已内置：正文 15/16px、无 text-align:justify、紧凑间距、花括号图片占位 8 个（形如 IMG:文件名）
+  复用步骤：
+    1. 把每个图片占位里的文件名换成本次素材名（assets/ 目录下，ASCII 命名，不带扩展名），
+       替换各 <span leaf> 里的正文；占位符本身的花括号写法照抄既有节点，别在注释里手写
+    2. python scripts/gzh_postprocess.py 本文件.html -o 输出.html --assets <素材目录>
+       （会自动 justify->left / 字号 / 间距 / 图片压 1080p JPEG 后 base64 内嵌 + 校验）
+    3. wrap_preview.py 生成带复制按钮的预览页，拷 E 盘交付目录
+  木子已确认此风格（2026-10-06），同类「评测/开源项目/数据型」文章直接复用，不必重读 gzh-design 组件库
+-->
+<section style="max-width:677px;margin:0 auto;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:#374151;line-height:1.75;letter-spacing:0.5px;">
+
+  <!-- 票据封面 -->
+  <section style="background:#fffef8;border:2px solid #1a1a1a;box-shadow:4px 4px 0 #1a1a1a;margin-bottom:24px;">
+    <section style="background:#059669;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;">
+      <section style="color:#fffef8;font-size:11px;letter-spacing:4px;font-weight:600;"><span leaf="">开源好物评测</span></section>
+      <section style="color:#fffef8;font-size:11px;letter-spacing:2px;"><span leaf="">★★★★★</span></section>
+    </section>
+    <section style="display:flex;">
+      <section style="flex:1;padding:24px 20px;border-right:2px dashed #A7F3D0;">
+        <section style="font-size:24px;font-weight:900;color:#1a1a1a;letter-spacing:0.5px;margin-bottom:4px;text-shadow:0.5px 0 0 #1a1a1a;"><span leaf="">高性价比人生指南</span></section>
+        <section style="font-size:14px;color:#666;letter-spacing:1px;margin-bottom:20px;"><span leaf="">一个月 4.5 万人 star 的一本「人生说明书」</span></section>
+        <section style="border-top:1px dashed #A7F3D0;margin-bottom:16px;"><span leaf=""><br></span></section>
+        <section style="font-size:13px;color:#555;line-height:1.8;padding:12px;background:#F0FDF4;border:1px solid #A7F3D0;">
+          <span leaf="">一个用循证医学写法写的 GitHub 开源项目，667 条建议，每条都钉在证据上。我翻完之后，默默把家里的盐换了。</span>
+        </section>
+        <section style="display:flex;gap:8px;margin-top:16px;">
+          <section style="font-size:10px;color:#059669;border:1px solid #059669;padding:4px 10px;"><span leaf="">#开源</span></section>
+          <section style="font-size:10px;color:#059669;border:1px solid #059669;padding:4px 10px;"><span leaf="">#循证</span></section>
+          <section style="font-size:10px;color:#059669;border:1px solid #059669;padding:4px 10px;"><span leaf="">#性价比</span></section>
+        </section>
+      </section>
+      <section style="width:48px;padding:14px 4px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;background:#F0FDF4;">
+        <section style="text-align:center;">
+          <section style="font-size:7px;color:#999;letter-spacing:1px;"><span leaf="">NO.</span></section>
+          <section style="font-size:18px;font-weight:900;color:#059669;"><span leaf="">001</span></section>
+        </section>
+        <section style="writing-mode:vertical-rl;font-size:9px;color:#888;letter-spacing:2px;"><span leaf="">深度评测</span></section>
+        <section style="text-align:center;">
+          <section style="font-size:7px;color:#999;letter-spacing:1px;"><span leaf="">GRADE</span></section>
+          <section style="font-size:14px;font-weight:900;color:#059669;"><span leaf="">S</span></section>
+        </section>
+      </section>
+    </section>
+    <section style="display:flex;justify-content:space-between;align-items:center;padding:0 8px;">
+      <section style="flex:1;border-top:2px dashed #A7F3D0;"><span leaf=""><br></span></section>
+      <section style="padding:0 8px;font-size:10px;color:#A7F3D0;"><span leaf="">✂</span></section>
+      <section style="flex:1;border-top:2px dashed #A7F3D0;"><span leaf=""><br></span></section>
+    </section>
+    <section style="padding:10px 20px;display:flex;justify-content:space-between;align-items:center;">
+      <section style="font-size:10px;color:#999;letter-spacing:1px;"><span leaf="">VALID FOR ONE READ</span></section>
+      <section style="font-size:10px;color:#999;letter-spacing:1px;"><span leaf="">ADMIT ONE 🎫</span></section>
+    </section>
+  </section>
+
+  <!-- 正文：开场 -->
+  <section style="margin-bottom:24px;padding:0 20px;">
+    <p style="font-size:16px;color:#555;line-height:1.9;margin-bottom:14px;text-align:left;">
+      <span leaf="">事情是这样的。昨天我在 GitHub 上刷到一个仓库，叫 </span>
+      <span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">HowToLiveBetter</span></span>
+      <span leaf="">，高性价比人生指南。我寻思这名字起得挺狂啊，点进去一看，</span>
+      <span style="color:#059669;font-weight:700;"><span leaf="">4.5 万 star</span></span>
+      <span leaf="">。更离谱的是，这仓库 9 月 7 号才建，到今天刚好一个月——一个月，4.5 万 star，332 次提交，昨天还在更新。</span>
+    </p>
+  </section>
+
+  <!-- gh-home-top -->
+  <section style="margin-bottom:24px;padding:0 20px;">
+    <section style="background:#fffef8;border:1px solid #eee;padding:6px;margin-bottom:6px;">
+      <figure style="margin:0;">
+        <span leaf=""><img src="{{IMG:gh-home-top}}" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </figure>
+    </section>
+    <p style="font-size:12px;color:#999;text-align:center;margin:0;"><span leaf="">仓库首页：45.8k star，9 月 7 日建库，一个月登顶</span></p>
+  </section>
+
+  <!-- 正文：循证医学 -->
+  <section style="margin-bottom:24px;padding:0 20px;">
+    <p style="font-size:16px;color:#555;line-height:1.9;margin-bottom:14px;text-align:left;">
+      <span leaf="">说实话我第一反应是，又是一个鸡汤合集吧。但往下翻了十分钟，我把这个判断收回去了。这玩意不是鸡汤，这是一本用 </span>
+      <span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">循证医学写法</span></span>
+      <span leaf="">写的「人生说明书」。全书 </span>
+      <span style="color:#059669;font-weight:700;"><span leaf="">667 条</span></span>
+      <span leaf="">，每条都长一个样：成本多少，一句说人话的解释，收益是什么，证据等级，原始出处。出处只认两种——期刊论文和官方文件，光文献链接就挂了 1675 条。</span>
+    </p>
+  </section>
+
+  <!-- gh-home-mid -->
+  <section style="margin-bottom:24px;padding:0 20px;">
+    <section style="background:#fffef8;border:1px solid #eee;padding:6px;margin-bottom:6px;">
+      <figure style="margin:0;">
+        <span leaf=""><img src="{{IMG:gh-home-mid}}" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </figure>
+    </section>
+    <p style="font-size:12px;color:#999;text-align:center;margin:0;"><span leaf="">全书 34 章目录：从「不要早死」到「出国技能」，把普通人一生的坑都排了一遍</span></p>
+  </section>
+
+  <!-- 章节 01 -->
+  <section style="margin-bottom:24px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #1a1a1a;">
+      <section style="background:#059669;color:#fff;font-size:12px;font-weight:800;padding:6px 12px;letter-spacing:2px;"><span leaf="">01</span></section>
+      <section style="font-size:18px;font-weight:800;color:#1a1a1a;letter-spacing:1px;"><span leaf="">给你举几个例子</span></section>
+      <section style="font-size:12px;color:#888;"><span leaf="">/ 三条有代表性的条目</span></section>
+    </section>
+
+    <p style="font-size:16px;color:#555;line-height:1.9;margin-bottom:14px;text-align:left;">
+      <span leaf="">第 9 条，把家里的食盐换成 </span>
+      <span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">低钠盐</span></span>
+      <span leaf="">。成本，一袋比普通盐贵几块钱。收益，一项在中国农村做的随机对照试验，</span>
+      <span style="color:#059669;font-weight:700;"><span leaf="">20995 人</span></span>
+      <span leaf="">、跟踪快 5 年，用低钠盐那组五年内死亡概率低约 12%，中风低约 14%。发在 NEJM，证据等级 A，最高那档。</span>
+    </p>
+
+    <!-- gh-case-salt -->
+    <section style="background:#fffef8;border:1px solid #eee;padding:6px;margin-bottom:6px;">
+      <figure style="margin:0;">
+        <span leaf=""><img src="{{IMG:gh-case-salt}}" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </figure>
+    </section>
+    <p style="font-size:12px;color:#999;text-align:center;margin:0 0 14px;"><span leaf="">仓库原文：成本 / 解释 / 收益 / 证据等级 / 出处，五段式固定格式</span></p>
+
+    <!-- 结论卡片：低钠盐金句 -->
+    <section style="background:#F0FDF4;border-left:4px solid #059669;padding:14px 16px;margin-bottom:16px;">
+      <p style="font-size:15px;color:#1a1a1a;font-weight:600;line-height:1.7;margin:0;">
+        <span leaf="">几块钱一袋的盐，换 </span>
+        <span style="color:#059669;"><span leaf="">12% 的死亡风险下降</span></span>
+        <span leaf="">。我看到这条的时候真愣了一下，这就是标题里说的性价比。</span>
+      </p>
+    </section>
+
+    <p style="font-size:16px;color:#555;line-height:1.9;margin-bottom:14px;text-align:left;">
+      <span leaf="">再看第 19 章，</span>
+      <span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">不要签「个人原因主动辞职」</span></span>
+      <span leaf="">。公司让你签这个字的时候往往笑眯眯的，但签下去，经济补偿和失业保险金通常一起落空——因为法律上该给补偿的情形里，不包括你自己主动走。作者特意补了一句：不必当天签，冷静一晚再说。</span>
+    </p>
+
+    <p style="font-size:16px;color:#555;line-height:1.9;margin-bottom:0;text-align:left;">
+      <span leaf="">还有一整章叫「</span>
+      <span style="color:#059669;font-weight:700;"><span leaf="">反面清单</span></span>
+      <span leaf="">」，专收那些看起来性价比高、其实不高的东西：为长寿吃复合维生素，没用；没症状去做全身 PET-CT 套餐，没用还白挨辐射；指望氨糖治膝盖，没用。每条后面都挂着论文。</span>
+    </p>
+  </section>
+
+  <!-- 编号特点列表：四个资源 -->
+  <section style="margin-bottom:24px;padding:0 20px;">
+    <section style="background:#fffef8;border:1px solid #eee;margin-bottom:12px;">
+      <section style="display:flex;align-items:stretch;">
+        <section style="width:36px;background:#059669;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;"><span leaf="">A</span></section>
+        <section style="flex:1;padding:12px 16px;font-size:15px;color:#555;line-height:1.7;border-left:1px dashed #A7F3D0;">
+          <span style="font-weight:600;color:#1a1a1a;"><span leaf="">四种资源算成本</span></span>
+          <span leaf="">：寿命、时间精力、金钱、人身自由，互不折算。</span>
+        </section>
+      </section>
+    </section>
+    <section style="background:#fffef8;border:1px solid #eee;margin-bottom:12px;">
+      <section style="display:flex;align-items:stretch;">
+        <section style="width:36px;background:#059669;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;"><span leaf="">B</span></section>
+        <section style="flex:1;padding:12px 16px;font-size:15px;color:#555;line-height:1.7;border-left:1px dashed #A7F3D0;">
+          <span style="font-weight:600;color:#1a1a1a;"><span leaf="">极高性价比仅 114 条</span></span>
+          <span leaf="">：占 17%，还有 68 条标「有争议」、3 处 TODO。</span>
+        </section>
+      </section>
+    </section>
+    <section style="background:#fffef8;border:1px solid #eee;">
+      <section style="display:flex;align-items:stretch;">
+        <section style="width:36px;background:#059669;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800;"><span leaf="">C</span></section>
+        <section style="flex:1;padding:12px 16px;font-size:15px;color:#555;line-height:1.7;border-left:1px dashed #A7F3D0;">
+          <span style="font-weight:600;color:#1a1a1a;"><span leaf="">作者给自己留 TODO</span></span>
+          <span leaf="">：一本免费电子书，作者给自己留待核实项，你敢信？？？</span>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <!-- evidence-grades -->
+  <section style="margin-bottom:24px;padding:0 20px;">
+    <section style="background:#fffef8;border:1px solid #eee;padding:6px;margin-bottom:6px;">
+      <figure style="margin:0;">
+        <span leaf=""><img src="{{IMG:evidence-grades}}" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </figure>
+    </section>
+    <p style="font-size:12px;color:#999;text-align:center;margin:0;"><span leaf="">证据分级：A 级 435 条、B 级 177 条、C 级 55 条，共 667 条</span></p>
+  </section>
+
+  <!-- 章节 02 -->
+  <section style="margin-bottom:24px;padding:0 20px;">
+    <section style="display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid #1a1a1a;">
+      <section style="background:#059669;color:#fff;font-size:12px;font-weight:800;padding:6px 12px;letter-spacing:2px;"><span leaf="">02</span></section>
+      <section style="font-size:18px;font-weight:800;color:#1a1a1a;letter-spacing:1px;"><span leaf="">AI 与人协作的范本</span></section>
+      <section style="font-size:12px;color:#888;"><span leaf="">/ 让我更感慨的地方</span></section>
+    </section>
+
+    <p style="font-size:16px;color:#555;line-height:1.9;margin-bottom:14px;text-align:left;">
+      <span leaf="">README 里明晃晃写着，本书在 </span>
+      <span style="color:#7C3AED;font-weight:700;"><span leaf="">Claude Code</span></span>
+      <span leaf=""> 协助下编写：AI 负责查文献、核对数字、维护交叉引用，选题、取舍和最终审定由人负责。更新全靠 GitHub issue 驱动，读者发现问题提 issue，作者核实了再改。还有个每周自动跑的脚本，专门检查那 1675 个文献链接有没有失效。</span>
+    </p>
+
+    <!-- ai-collab -->
+    <section style="background:#fffef8;border:1px solid #eee;padding:6px;margin-bottom:6px;">
+      <figure style="margin:0;">
+        <span leaf=""><img src="{{IMG:ai-collab}}" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </figure>
+    </section>
+    <p style="font-size:12px;color:#999;text-align:center;margin:0 0 14px;"><span leaf="">人定选题 → AI 查文献、核数字 → 人终审</span></p>
+
+    <!-- 结论卡片：协作金句 -->
+    <section style="background:#F0FDF4;border-left:4px solid #059669;padding:14px 16px;margin-bottom:16px;">
+      <p style="font-size:15px;color:#1a1a1a;font-weight:600;line-height:1.7;margin:0;">
+        <span leaf="">这可能是我今年见过的，</span>
+        <span style="color:#059669;"><span leaf="">AI 和人协作最好的形态之一</span></span>
+        <span leaf="">。AI 干体力活，人下判断。</span>
+      </p>
+    </section>
+
+    <p style="font-size:16px;color:#555;line-height:1.9;margin-bottom:0;text-align:left;">
+      <span leaf="">现在这个仓库已经有了英俄西葡越五种语言的翻译，有人给它做了打勾清单网站，有人做了微信小程序。全是陌生人自发干的。说真的，我很久没在一个开源项目上看到这种场面了——以前让我有类似感觉的都是改变行业的代码库，这次不是代码，是 667 条「怎么活得更好一点」的答案，被认认真真钉在了证据上。</span>
+    </p>
+  </section>
+
+  <!-- 核心观点卡片 -->
+  <section style="margin-bottom:24px;padding:0 20px;">
+    <section style="background:#fffef8;border:2px solid #1a1a1a;box-shadow:3px 3px 0 #1a1a1a;padding:20px;margin-bottom:0;">
+      <p style="font-size:16px;color:#1a1a1a;font-weight:700;line-height:1.8;margin:0 0 12px;text-align:center;">
+        <span leaf="">信息不值钱，</span>
+        <span style="color:#059669;font-size:24px;"><span leaf="">被核实过的信息</span></span>
+        <span leaf="">才值钱</span>
+      </p>
+      <p style="font-size:15px;color:#555;line-height:1.8;margin:0;text-align:left;">
+        <span leaf="">那 4.5 万个 star，投的其实是 1675 条一条一条核过的文献。</span>
+      </p>
+    </section>
+  </section>
+
+  <!-- 结尾盐段 -->
+  <section style="margin-bottom:24px;padding:0 20px;">
+    <p style="font-size:16px;color:#555;line-height:1.9;margin-bottom:14px;text-align:left;">
+      <span leaf="">开头我说，我默默把家里的盐换了。是真的换了。低钠盐，超市就有，贵三块五。</span>
+    </p>
+  </section>
+
+  <!-- cover-salt -->
+  <section style="margin-bottom:24px;padding:0 20px;">
+    <section style="background:#fffef8;border:1px solid #eee;padding:6px;margin-bottom:6px;">
+      <figure style="margin:0;">
+        <span leaf=""><img src="{{IMG:cover-salt}}" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </figure>
+    </section>
+    <p style="font-size:12px;color:#999;text-align:center;margin:0;"><span leaf="">低钠盐 · 降 12% 死亡风险 · 高性价比</span></p>
+  </section>
+
+  <!-- 在线检索站 -->
+  <section style="margin-bottom:24px;padding:0 20px;">
+    <p style="font-size:16px;color:#555;line-height:1.9;margin-bottom:14px;text-align:left;">
+      <span leaf="">文中条目和数据来自 GitHub 开源项目 </span>
+      <span style="border-bottom:2px solid #A7F3D0;font-weight:600;"><span leaf="">eternity4719/HowToLiveBetter</span></span>
+      <span leaf="">（正文 CC BY 4.0），有兴趣的可以直接去翻原文，667 条，免费。在线检索版长这样，按章节翻，也能按性价比排序读。</span>
+    </p>
+    <section style="background:#fffef8;border:1px solid #eee;padding:6px;margin-bottom:6px;">
+      <figure style="margin:0;">
+        <span leaf=""><img src="{{IMG:site-intro}}" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </figure>
+    </section>
+    <p style="font-size:12px;color:#999;text-align:center;margin:0 0 12px;"><span leaf="">在线检索站头部：667 条 / 证据分级 / 1675 条文献 / CC BY 4.0</span></p>
+    <section style="background:#fffef8;border:1px solid #eee;padding:6px;margin-bottom:6px;">
+      <figure style="margin:0;">
+        <span leaf=""><img src="{{IMG:gh-pages-site}}" style="max-width:100%;height:auto;display:block;margin:0 auto;"></span>
+      </figure>
+    </section>
+    <p style="font-size:12px;color:#999;text-align:center;margin:0;"><span leaf="">在线检索站：按章节浏览，可按性价比排序</span></p>
+  </section>
+
+  <!-- 标签组 -->
+  <section style="margin-bottom:24px;padding:0 20px;">
+    <section style="display:flex;gap:8px;flex-wrap:wrap;">
+      <section style="font-size:10px;color:#059669;border:1px solid #059669;padding:4px 10px;"><span leaf="">#HowToLiveBetter</span></section>
+      <section style="font-size:10px;color:#059669;border:1px solid #059669;padding:4px 10px;"><span leaf="">#开源人生指南</span></section>
+      <section style="font-size:10px;color:#059669;border:1px solid #059669;padding:4px 10px;"><span leaf="">#AI协作</span></section>
+    </section>
+  </section>
+
+  <!-- 固定签名段落 -->
+  <section style="margin-bottom:24px;padding:0 20px;">
+    <p style="font-size:15px;color:#555;line-height:1.9;margin-bottom:0;text-align:left;">
+      <span leaf="">我是 {{作者名}}，在「硅基视域」持续记录 AI 与科技如何改变我们做事的姿势。{{简介}}</span>
+    </p>
+  </section>
+
+  <!-- 结尾互动区 -->
+  <section style="padding:0 20px 32px;">
+    <section style="background:#fffef8;border:2px solid #1a1a1a;box-shadow:4px 4px 0 #1a1a1a;padding:24px 20px;text-align:center;">
+      <p style="font-size:13px;font-weight:700;color:#1a1a1a;margin:0 0 20px;line-height:1.6;">
+        <span leaf="">如果你觉得今天这篇有收获，点赞、在看、转发三连，我们下篇见。</span>
+      </p>
+      <section style="display:flex;justify-content:center;gap:24px;margin-bottom:16px;">
+        <section style="text-align:center;color:#555;">
+          <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#fff;border:1px solid #1a1a1a;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+          </section>
+          <span style="font-size:10px;font-weight:600;"><span leaf="">点赞</span></span>
+        </section>
+        <section style="text-align:center;color:#555;">
+          <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#fff;border:1px solid #1a1a1a;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"></circle><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path></svg>
+          </section>
+          <span style="font-size:10px;font-weight:600;"><span leaf="">在看</span></span>
+        </section>
+        <section style="text-align:center;color:#059669;">
+          <section style="width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;background:#F0FDF4;border:2px solid #059669;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </section>
+          <span style="font-size:10px;font-weight:600;"><span leaf="">星标</span></span>
+        </section>
+      </section>
+      <section style="border-top:1px dashed #ccc;padding-top:12px;">
+        <p style="font-size:10px;color:#999;letter-spacing:2px;margin:0;">
+          <span leaf="">THANKS FOR READING ✂</span>
+        </p>
+      </section>
+    </section>
+  </section>
+
+  <!-- 结束符 -->
+  <p style="text-align:center;color:#D1D5DB;font-size:14px;margin:24px 0 0 0;">
+    <span leaf="">/</span>
+  </p>
+
+</section>
+
+<p style="display:none;">
+  <mp-style-type data-value="3"></mp-style-type>
+</p>
